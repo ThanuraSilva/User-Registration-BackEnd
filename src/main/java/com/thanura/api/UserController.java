@@ -1,4 +1,5 @@
 package com.thanura.api;
+import com.thanura.dto.UserDTO;
 import com.thanura.security.JWTUtils;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -27,12 +28,12 @@ public class UserController {
 
     @ResponseStatus(HttpStatus.CREATED)
     @PostMapping(path="/users/save", produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_JSON_VALUE)
-    public User saveUser(@RequestBody User user) {
+    public UserDTO saveUser(@RequestBody UserDTO user) {
         return userService.saveUser(user);
     }
 
     @PostMapping(path = "/users/login", consumes = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<String> loginUser(@RequestBody User loginCredentials) {
+    public ResponseEntity<String> loginUser(@RequestBody UserDTO loginCredentials) {
         try {
             UserDetails userDetails = userService.loadUserByUsername(loginCredentials.getUsername());
             if (userDetails.getPassword().replace("{noop}", "").equals(loginCredentials.getPassword())){

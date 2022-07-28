@@ -1,8 +1,8 @@
 package com.thanura.repository;
 
-import com.thanura.entnites.User;
+import com.thanura.dto.UserDTO;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface UserRepository extends JpaRepository<User,Integer> {
-    User findByUsername(String username);
+public interface UserRepository extends JpaRepository<UserDTO,Integer> {
+    UserDTO findByUsername(String username);
 }

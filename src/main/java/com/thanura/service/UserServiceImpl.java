@@ -1,5 +1,5 @@
 package com.thanura.service;
-import com.thanura.entnites.User;
+import com.thanura.dto.UserDTO;
 import com.thanura.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -16,7 +16,7 @@ public class UserServiceImpl implements UserService {
     private UserRepository userRepository;
 
     @Override
-    public User saveUser(User user) {
+    public UserDTO saveUser(UserDTO user) {
         user.setPassword("{noop}" + user.getPassword());
         return userRepository.save(user);
     }
@@ -24,7 +24,7 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        User user = userRepository.findByUsername(username);
+        UserDTO user = userRepository.findByUsername(username);
         if (user == null) {
             throw new UsernameNotFoundException("User Not Found");
         }

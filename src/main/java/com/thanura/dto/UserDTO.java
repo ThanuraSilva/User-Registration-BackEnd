@@ -1,4 +1,4 @@
-package com.thanura.entnites;
+package com.thanura.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -14,7 +14,7 @@ import static javax.persistence.GenerationType.IDENTITY;
 @Data
 @Entity
 @Repository
-public class User {
+public class UserDTO {
     @Id
     @GeneratedValue(strategy = IDENTITY)
     private Long id;

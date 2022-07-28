@@ -11,17 +11,5 @@ public class AppInitializer {
     public static void main(String[] args) {
         SpringApplication.run(AppInitializer.class, args);
     }
-    @Bean
-    PasswordEncoder passwordEncoder(){
-        return new BCryptPasswordEncoder();
-    }
-//    @Bean
-//    CommandLineRunner run (UserService userService){
-//        return args -> {
-//            userService.addStateToUser("thanura","USER");
-//            userService.addStateToUser("gamini","ADMIN");
-//            userService.addStateToUser("chandrani","ADMIN");
-//        };
-//    }
 
 }

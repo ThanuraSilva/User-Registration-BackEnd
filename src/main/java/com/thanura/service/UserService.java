@@ -1,7 +1,7 @@
 package com.thanura.service;
-import com.thanura.entnites.User;
+import com.thanura.dto.UserDTO;
 import org.springframework.security.core.userdetails.UserDetailsService;
 
 public interface UserService extends UserDetailsService {
-    User saveUser(User user);
+    UserDTO saveUser(UserDTO user);
 }
