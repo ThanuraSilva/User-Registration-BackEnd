@@ -14,6 +14,7 @@ import static javax.persistence.GenerationType.IDENTITY;
 @Data
 @Entity
 @Repository
+@Table(name= "User")
 public class UserDTO {
     @Id
     @GeneratedValue(strategy = IDENTITY)

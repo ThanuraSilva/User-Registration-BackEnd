@@ -17,6 +17,7 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public UserDTO saveUser(UserDTO user) {
+        if (userRepository.findByUsername(user.getUsername()) != null) throw new RuntimeException("User already registered");
         user.setPassword("{noop}" + user.getPassword());
         return userRepository.save(user);
     }
