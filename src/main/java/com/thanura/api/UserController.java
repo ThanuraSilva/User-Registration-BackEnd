@@ -22,7 +22,7 @@ public class UserController {
 
     @GetMapping(path="/users/test")
     public String testing(){
-        return "IJSE";
+        return "Thanura";
     }
 
     @ResponseStatus(HttpStatus.CREATED)
